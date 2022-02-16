@@ -11,7 +11,7 @@ def main():
         client.sendall(b'Hello World!')
 
         # Tip: len(img.tostring())
-        size, data = client.recv(len(img.tostring()))
+        size, data = client.recv(1228800)
         if not data:
             break
 

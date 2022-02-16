@@ -12,6 +12,10 @@ class Camera(object):
         # Implement this function that grabs an image from the webcam and returns a numpy array
         ret, img = self._camera.read()
 
+        # Bruteforcer bildestørrelsen slik at jeg kan vite hvilken stringlength jeg mottar i klienten. Er det en måte å ikke måtte gjøre det sånn?
+        self._camera.set(cv.CAP_PROP_FRAME_WIDTH, 640)
+        self._camera.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+
         if not ret:
             print("Can't receive frame (stream end?). Exiting ...")
             return
