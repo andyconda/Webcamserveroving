@@ -13,7 +13,7 @@ class Camera(object):
     def capture(self):
         # Implement this function that grabs an image from the webcam and returns a numpy array
         ret, img = self._camera.read()
-        img = cv2.flip(img, 0)  # bildet må flippes foreløpig siden RPien min er opp ned hihih
+        img = cv.flip(img, 0)  # bildet må flippes foreløpig siden RPien min er opp ned hihih
         # print("Shape i camera_opencv")
         # print(img.shape)
         # Legges til for å gi windows tid til å finne kameraet. Fikset en error hvor den ikke klarte å acesse kameratet.
