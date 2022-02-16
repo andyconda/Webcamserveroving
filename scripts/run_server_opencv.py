@@ -14,7 +14,10 @@ def main():
             break
 
         img = camera.capture()
+        # print(img.dtype) # for å finne inputs i run_client_opencv
+        # print(img.shape) # for å finne inputs i run_client_opencv
         buf = img.tostring()
+        # print(len(buf)) # for å finne inputs i run_client_opencv
         server.sendall(buf)
 
 

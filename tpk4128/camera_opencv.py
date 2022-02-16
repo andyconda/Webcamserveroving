@@ -1,5 +1,6 @@
-#import numpy as np
+import numpy as np
 import cv2 as cv
+import time
 
 
 class Camera(object):
@@ -11,10 +12,9 @@ class Camera(object):
     def capture(self):
         # Implement this function that grabs an image from the webcam and returns a numpy array
         ret, img = self._camera.read()
-
-        # Bruteforcer bildestørrelsen slik at jeg kan vite hvilken stringlength jeg mottar i klienten. Er det en måte å ikke måtte gjøre det sånn?
-        self._camera.set(cv.CAP_PROP_FRAME_WIDTH, 640)
-        self._camera.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+        print("Shape i camera_opencv")
+        print(img.shape)
+        time.sleep(1.00) # Legges til for å gi windows tid til å finne kameraet. Fikset en error hvor den ikke klarte å acesse kameratet.
 
         if not ret:
             print("Can't receive frame (stream end?). Exiting ...")

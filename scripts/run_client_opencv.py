@@ -11,12 +11,12 @@ def main():
         client.sendall(b'Hello World!')
 
         # Tip: len(img.tostring())
-        size, data = client.recv(1228800)
+        size, data = client.recv(921600)
         if not data:
             break
 
         # Tip: img.dtype, img.shape
-        img = np.frombuffer(data, img.dtype).reshape(img.shape)
+        img = np.frombuffer(data, "uint8").reshape(480, 640, 3)
 
         cv2.imshow('img', img)
         if cv2.waitKey(20) == 27:  # Esc: 27
