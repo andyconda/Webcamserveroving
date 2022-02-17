@@ -6,7 +6,7 @@ import numpy as np
 
 def main():
 
-    client = SocketClient('192.168.56.1', 50007)
+    client = SocketClient('10.02.2.15', 50007)
     while True:
         client.sendall(b'Hello World!')
 
