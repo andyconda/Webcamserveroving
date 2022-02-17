@@ -4,7 +4,7 @@ from tpk4128.camera_opencv import Camera
 
 def main():
     camera = Camera()
-    server = SocketServer('10.53.26.72', 50007)
+    server = SocketServer('192.168.56.1', 50007)
 
     while True:
 
