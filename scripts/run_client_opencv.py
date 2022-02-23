@@ -6,9 +6,9 @@ import numpy as np
 
 def main():
 
-    client = SocketClient('10.53.26.72', 50007)
+    client = SocketClient('10.53.26.72', 50007
+    client.sendall(b'Hello man!')
     while True:
-        client.sendall(b'Hello World!')
 
         # Tip: len(img.tostring())
         size, data = client.recv(921600)
