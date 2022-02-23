@@ -16,8 +16,7 @@ def main():
             break
 
         # Tip: img.dtype, img.shape
-        imgunflipped = np.frombuffer(data, "uint8").reshape(480, 640, 3)
-        cv2.rotate(imgunflipped, cv2.ROTATE_180, img)
+        img = np.frombuffer(data, "uint8").reshape(480, 640, 3)
 
         cv2.imshow('img', img)
         if cv2.waitKey(20) == 27:  # Esc: 27
