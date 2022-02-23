@@ -16,7 +16,7 @@ def main():
         img = camera.capture()
         # print(img.dtype) # for å finne inputs i run_client_opencv
         # print(img.shape) # for å finne inputs i run_client_opencv
-        buf = img.tostring()
+        buf = img.tobytes() # stod opprinnelig tostring() her, men fikk warning om at det var deprecated.
         # print(len(buf)) # for å finne inputs i run_client_opencv
         server.sendall(buf)
 

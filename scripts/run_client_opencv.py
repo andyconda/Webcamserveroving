@@ -6,9 +6,13 @@ import numpy as np
 
 def main():
 
-    client = SocketClient('10.53.26.72', 50007
-    client.sendall(b'Hello man!')
+    client = SocketClient('10.53.26.72', 50007)
+
+    firstTime = 0;
     while True:
+        if firstTime == 0:#sørger for at den kun printer hello world en gang
+            client.sendall(b'Hello World!') # b kaster stringen til byte
+            firstTime = 1
 
         # Tip: len(img.tostring())
         size, data = client.recv(921600)
