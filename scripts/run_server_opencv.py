@@ -5,7 +5,7 @@ import cv2 as cv
 
 def main():
     camera = Camera()
-    server = SocketServer('10.53.26.72', 50007)
+    server = SocketServer('192.168.105.175', 50007)
 
     while True:
 
